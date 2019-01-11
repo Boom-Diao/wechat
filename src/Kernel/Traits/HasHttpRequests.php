@@ -84,11 +84,11 @@ trait HasHttpRequests
     }
 
     /**
-     * Return GuzzleHttp\Client instance.
+     * Return GuzzleHttp\ClientInterface instance.
      *
-     * @return \GuzzleHttp\Client
+     * @return ClientInterface
      */
-    public function getHttpClient(): Client
+    public function getHttpClient(): ClientInterface
     {
         if (!($this->httpClient instanceof ClientInterface)) {
             $this->httpClient = new Client();
@@ -101,7 +101,7 @@ trait HasHttpRequests
      * Add a middleware.
      *
      * @param callable    $middleware
-     * @param null|string $name
+     * @param string|null $name
      *
      * @return $this
      */
